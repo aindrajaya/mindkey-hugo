@@ -1,4 +1,4 @@
-baseURL = "https://mindkey-hugo.netlify.app/"
+baseURL = "https://mindkey-hugo.vercel.app/"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
