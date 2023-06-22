@@ -1,0 +1,55 @@
+<!-- File: openapi.html -->
+
+{{ with $.Page.Resources.GetMatch "openapi.json" }}
+    {{ $openapi := .Content | getJSON }}
+    {{ with $openapi }}
+        <h1>OpenAPI Documentation</h1>
+
+        <div class="$openapi-spec-content">
+            <h2>{{ .info.title }} version {{ .info.version }}</h2>
+            <div class="description">
+                <p>{{ .info.description }}</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: stretch; width: 80%;">
+                {{ range $path, $pathMethods := .paths }}
+                    {{ range $pathMethod, $pathDetails := $pathMethods }}
+                        <div style="display: flex; flex-direction: column; width: 100%; border: 1px solid black;">
+                            <div style="display: flex; flex-direction: row; width: 100%; max-height: 400px; overflow: auto;">
+                                <div style="width: 50%; padding-right: 15px;">
+                                    <h4><span style="text-transform: uppercase;">{{ $pathMethod }}</span>&nbsp;&nbsp;<span style="color: darkslategray;">{{ $path }}</span></h4>
+                                    <h5>{{ $pathDetails.summary }}</h5>
+                                    <p><a href="{{ $pathDetails.externalDocs.url }}">{{ $pathDetails.externalDocs.description}}</a></p>
+                                    <p>Description: {{ $pathDetails.description | markdownify }}</p>
+                                </div>
+                                <div style="width: 50%; display: flex; flex-direction: column;">
+                                    {{ range $responseCode, $responseDetails := $pathDetails.responses }}
+                                        </br>
+                                        {{ if isset $responseDetails "content" }}
+                                            {{ range $exampleName, $example := (index $responseDetails.content "application/json").examples }}
+                                                {{ if isset $example "$ref" }}
+                                                    {{ $refPath := index $example "$ref" }}
+                                                    {{ range $index, $component := (split $refPath "/") }}
+                                                        {{ if (index $openapi.components.examples $component) }}
+                                                            <div style="font-weight: bold; max-height: calc(80%); overflow: auto;">
+                                                                <span>Example for Response Code: {{ $responseCode }}</span>
+                                                                <pre><code>{{ (index $openapi.components.examples $component).value | jsonify (dict "indent" "  ") }}</code></pre>
+                                                            </div>
+                                                        {{ end }}
+                                                    {{ end }}
+                                                {{ else }}
+                                                    <code style="flex-wrap: nowrap; overflow-x: scroll;">Example Response: {{ $example }}</code>
+                                                {{ end }}
+                                            {{ end }}
+                                        {{ else }}
+                                            <span>No Example for Response Code: {{ $responseCode }}</span>
+                                        {{ end }}
+                                    {{ end }}
+                                </div>
+                            </div>
+                        </div>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    {{ end }}
+{{ end }}

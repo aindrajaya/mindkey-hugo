@@ -61,7 +61,7 @@
   name = "Tutorial"
   weight = 50
   identifier = "tutorial"
-  url = "/docs/integration/recipe"
+  url = "/docs/recruiting/recipe"
   parent = "get-started"
 
 # [[social]]

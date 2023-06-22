@@ -1,5 +1,5 @@
 ---
-title: "API"
+title: "Integration API"
 description: "MindKey API is a REST API and it is hosted in Azure. Our API has predictable resource-oriented URLs, accepts JSON request bodies, returns JSON, and uses standard HTTP response codes, authentication and verbs."
 lead: "MindKey API is a REST API and it is hosted in Azure. Our API has predictable resource-oriented URLs, accepts JSON request bodies, returns JSON, and uses standard HTTP response codes, authentication and verbs."
 date: 2020-10-06T08:48:57+00:00

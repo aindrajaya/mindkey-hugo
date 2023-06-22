@@ -1,5 +1,5 @@
 ---
-title: "MindKey Recruiting API"
+title: "Recruiting API"
 description: "MindKey recruiting API is a REST API and it is hosted in Azure. Our API has predictable resource-oriented URLs, accepts form-data request bodies, returns JSON, and uses standard HTTP response codes, authentication and verbs."
 lead: "The recruiting API can be called from the customer’s side through the CustomerId."
 date: 2020-10-06T08:48:57+00:00
