@@ -24,7 +24,7 @@
 [[plugins]]
   package = "netlify-plugin-submit-sitemap"
 
-	[plugins.inputs]
+  [plugins.inputs]
     baseUrl = "https://mindkey.netlify.app/"
     sitemapPath = "/sitemap.xml"
     ignorePeriod = 0
@@ -40,3 +40,31 @@
   port = 8888
   publish = "public"
   autoLaunch = false
+
+# Cache control headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
+
+[[headers]]
+  for = "/path/to/style.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/path/to/script.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/path/to/image.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
