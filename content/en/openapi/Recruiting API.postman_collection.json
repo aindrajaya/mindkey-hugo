@@ -1,0 +1,2531 @@
+{
+	"info": {
+		"_postman_id": "c9dd90be-3270-4e39-b49d-23e4fcb715af",
+		"name": "Recruiting API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28066520"
+	},
+	"item": [
+		{
+			"name": "Vacancy List",
+			"item": [
+				{
+					"name": "Detailed",
+					"item": [
+						{
+							"name": "Get All Vacancies - da-dk",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"response is ok\", function () {",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Body is correct\", function () {",
+											"   pm.expect(pm.response.text()).to.include('unsolicited');",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-MindKey-User-Language",
+										"value": "da-DK",
+										"type": "text"
+									},
+									{
+										"key": "Origin",
+										"value": "http://localhost:8080",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed",
+									"host": [
+										"{{recruiting_root}}"
+									],
+									"path": [
+										"{{recruiting_customer_id}}",
+										"vacancies",
+										"detailed"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Vacancies - en-us",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"response is ok\", function () {",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Body is correct\", function () {",
+											"   pm.expect(pm.response.text()).to.include('This is the english teaser text');",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-MindKey-User-Language",
+										"value": "en-US",
+										"type": "text"
+									},
+									{
+										"key": "Origin",
+										"value": "http://localhost:8080",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed",
+									"host": [
+										"{{recruiting_root}}"
+									],
+									"path": [
+										"{{recruiting_customer_id}}",
+										"vacancies",
+										"detailed"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Simple",
+					"item": [
+						{
+							"name": "Filters",
+							"item": [
+								{
+									"name": "Get Vacancies - Date Filter",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is ok\", function () {",
+													"    pm.response.to.have.status(200);",
+													"    pm.response.to.be.json;",
+													"});",
+													"",
+													"pm.test(\"Body is correct\", function () {",
+													"   pm.expect(pm.response.text()).to.include('unsolicited');",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-MindKey-User-Language",
+												"value": "da-DK",
+												"type": "text"
+											},
+											{
+												"key": "Origin",
+												"value": "http://localhost:8080",
+												"type": "text"
+											},
+											{
+												"key": "X-MindKey-User-Timezone",
+												"value": "Europe/Copenhagen",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed?perdate=2023-04-12",
+											"host": [
+												"{{recruiting_root}}"
+											],
+											"path": [
+												"{{recruiting_customer_id}}",
+												"vacancies",
+												"detailed"
+											],
+											"query": [
+												{
+													"key": "perdate",
+													"value": "2023-04-12"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Vacancies - Internal Filter",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is ok\", function () {",
+													"    pm.response.to.have.status(200);",
+													"    pm.response.to.be.json;",
+													"});",
+													"",
+													"pm.test(\"Body is correct\", function () {",
+													"   pm.expect(pm.response.text()).to.include('unsolicited');",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-MindKey-User-Language",
+												"value": "da-DK",
+												"type": "text"
+											},
+											{
+												"key": "Origin",
+												"value": "http://localhost:8080",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed?internalaccess=true",
+											"host": [
+												"{{recruiting_root}}"
+											],
+											"path": [
+												"{{recruiting_customer_id}}",
+												"vacancies",
+												"detailed"
+											],
+											"query": [
+												{
+													"key": "internalaccess",
+													"value": "true"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Vacancies - External Filter",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is ok\", function () {",
+													"    pm.response.to.have.status(200);",
+													"    pm.response.to.be.json;",
+													"});",
+													"",
+													"pm.test(\"Body is correct\", function () {",
+													"   pm.expect(pm.response.text()).to.include('unsolicited');",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-MindKey-User-Language",
+												"value": "da-DK",
+												"type": "text"
+											},
+											{
+												"key": "Origin",
+												"value": "http://localhost:8080",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed?externalaccess=true",
+											"host": [
+												"{{recruiting_root}}"
+											],
+											"path": [
+												"{{recruiting_customer_id}}",
+												"vacancies",
+												"detailed"
+											],
+											"query": [
+												{
+													"key": "externalaccess",
+													"value": "true"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Vacancies  - Vacancy Type Filter",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is ok\", function () {",
+													"    pm.response.to.have.status(200);",
+													"    pm.response.to.be.json;",
+													"});",
+													"",
+													"pm.test(\"Body is correct\", function () {",
+													"   pm.expect(pm.response.text()).to.include('unsolicited');",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-MindKey-User-Language",
+												"value": "da-DK",
+												"type": "text"
+											},
+											{
+												"key": "Origin",
+												"value": "http://localhost:8080",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed?VacancyTypeId=Specialist",
+											"host": [
+												"{{recruiting_root}}"
+											],
+											"path": [
+												"{{recruiting_customer_id}}",
+												"vacancies",
+												"detailed"
+											],
+											"query": [
+												{
+													"key": "VacancyTypeId",
+													"value": "Specialist"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Vacancies  - Region Filter",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is ok\", function () {",
+													"    pm.response.to.have.status(200);",
+													"    pm.response.to.be.json;",
+													"});",
+													"",
+													"pm.test(\"Body is correct\", function () {",
+													"   pm.expect(pm.response.text()).to.include('unsolicited');",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-MindKey-User-Language",
+												"value": "da-DK",
+												"type": "text"
+											},
+											{
+												"key": "Origin",
+												"value": "http://localhost:8080",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed?RegionName=EU",
+											"host": [
+												"{{recruiting_root}}"
+											],
+											"path": [
+												"{{recruiting_customer_id}}",
+												"vacancies",
+												"detailed"
+											],
+											"query": [
+												{
+													"key": "RegionName",
+													"value": "EU"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Vacancies  - Location Filter",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is ok\", function () {",
+													"    pm.response.to.have.status(200);",
+													"    pm.response.to.be.json;",
+													"});",
+													"",
+													"pm.test(\"Body is correct\", function () {",
+													"   pm.expect(pm.response.text()).to.include('unsolicited');",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-MindKey-User-Language",
+												"value": "da-DK",
+												"type": "text"
+											},
+											{
+												"key": "Origin",
+												"value": "http://localhost:8080",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed?LocationId=Horsens",
+											"host": [
+												"{{recruiting_root}}"
+											],
+											"path": [
+												"{{recruiting_customer_id}}",
+												"vacancies",
+												"detailed"
+											],
+											"query": [
+												{
+													"key": "LocationId",
+													"value": "Horsens"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Vacancies  - Vacancy Area Filter",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is ok\", function () {",
+													"    pm.response.to.have.status(200);",
+													"    pm.response.to.be.json;",
+													"});",
+													"",
+													"pm.test(\"Body is correct\", function () {",
+													"   pm.expect(pm.response.text()).to.include('unsolicited');",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-MindKey-User-Language",
+												"value": "da-DK",
+												"type": "text"
+											},
+											{
+												"key": "Origin",
+												"value": "http://localhost:8080",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed?VacancyAreaName=Danmark",
+											"host": [
+												"{{recruiting_root}}"
+											],
+											"path": [
+												"{{recruiting_customer_id}}",
+												"vacancies",
+												"detailed"
+											],
+											"query": [
+												{
+													"key": "VacancyAreaName",
+													"value": "Danmark"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Vacancies  - ExcludeAdvertisementText",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is ok\", function () {",
+													"    pm.response.to.have.status(200);",
+													"    pm.response.to.be.json;",
+													"});",
+													"",
+													"pm.test(\"Body is correct\", function () {",
+													"   pm.expect(pm.response.text()).to.include('unsolicited');",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-MindKey-User-Language",
+												"value": "da-DK",
+												"type": "text"
+											},
+											{
+												"key": "Origin",
+												"value": "http://localhost:8080",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed?IncludeAdvertisementText=false",
+											"host": [
+												"{{recruiting_root}}"
+											],
+											"path": [
+												"{{recruiting_customer_id}}",
+												"vacancies",
+												"detailed"
+											],
+											"query": [
+												{
+													"key": "IncludeAdvertisementText",
+													"value": "false"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Vacancies  - Detailed - All Filters",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is ok\", function () {",
+													"    pm.response.to.have.status(200);",
+													"    pm.response.to.be.json;",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-MindKey-User-Language",
+												"value": "da-DK",
+												"type": "text"
+											},
+											{
+												"key": "Origin",
+												"value": "http://localhost:8080",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed?perdate=2020-09-01&VacancyAreaName=Danmark&VacancyTypeId=Specialist&internalaccess=false&externalaccess=true&LocationId=L2&RegionName=Jylland&VacancyAreaName=Danmark",
+											"host": [
+												"{{recruiting_root}}"
+											],
+											"path": [
+												"{{recruiting_customer_id}}",
+												"vacancies",
+												"detailed"
+											],
+											"query": [
+												{
+													"key": "perdate",
+													"value": "2020-09-01"
+												},
+												{
+													"key": "VacancyAreaName",
+													"value": "Danmark"
+												},
+												{
+													"key": "VacancyTypeId",
+													"value": "Specialist"
+												},
+												{
+													"key": "internalaccess",
+													"value": "false"
+												},
+												{
+													"key": "externalaccess",
+													"value": "true"
+												},
+												{
+													"key": "LocationId",
+													"value": "L2"
+												},
+												{
+													"key": "RegionName",
+													"value": "Jylland"
+												},
+												{
+													"key": "VacancyAreaName",
+													"value": "Danmark"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Vacancies  - Only Unsolicited",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is ok\", function () {",
+													"    pm.response.to.have.status(200);",
+													"    pm.response.to.be.json;",
+													"});",
+													"",
+													"pm.test(\"Body is correct\", function () {",
+													"   pm.expect(pm.response.text()).to.include('unsolicited');",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-MindKey-User-Language",
+												"value": "da-DK",
+												"type": "text"
+											},
+											{
+												"key": "Origin",
+												"value": "http://localhost:8080",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed?Unsolicited=Only",
+											"host": [
+												"{{recruiting_root}}"
+											],
+											"path": [
+												"{{recruiting_customer_id}}",
+												"vacancies",
+												"detailed"
+											],
+											"query": [
+												{
+													"key": "Unsolicited",
+													"value": "Only"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Vacancies  - Only Normal",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is ok\", function () {",
+													"    pm.response.to.have.status(200);",
+													"    pm.response.to.be.json;",
+													"});",
+													"",
+													"pm.test(\"Body is correct\", function () {",
+													"   pm.expect(pm.response.text()).to.include('unsolicited');",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-MindKey-User-Language",
+												"value": "da-DK",
+												"type": "text"
+											},
+											{
+												"key": "Origin",
+												"value": "http://localhost:8080",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed?Unsolicited=Hide",
+											"host": [
+												"{{recruiting_root}}"
+											],
+											"path": [
+												"{{recruiting_customer_id}}",
+												"vacancies",
+												"detailed"
+											],
+											"query": [
+												{
+													"key": "Unsolicited",
+													"value": "Hide"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Get All Vacancies Simple - da-dk",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"response is ok\", function () {",
+											"    pm.response.to.have.status(200);",
+											"    pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Body is correct\", function () {",
+											"   pm.expect(pm.response.text()).to.include('unsolicited');",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-MindKey-User-Language",
+										"value": "da-DK",
+										"type": "text"
+									},
+									{
+										"key": "Origin",
+										"value": "http://localhost:8080",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/simple?ShowRegions=true&ShowLocations=true&ShowTeaserText=false&ShowStartDate=false&ShowEndDate=false&ShowAreas=true",
+									"host": [
+										"{{recruiting_root}}"
+									],
+									"path": [
+										"{{recruiting_customer_id}}",
+										"vacancies",
+										"simple"
+									],
+									"query": [
+										{
+											"key": "ShowRegions",
+											"value": "true"
+										},
+										{
+											"key": "ShowLocations",
+											"value": "true"
+										},
+										{
+											"key": "ShowTeaserText",
+											"value": "false"
+										},
+										{
+											"key": "ShowStartDate",
+											"value": "false"
+										},
+										{
+											"key": "ShowEndDate",
+											"value": "false"
+										},
+										{
+											"key": "ShowAreas",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Vacancies  - Sorting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Body is correct\", function () {",
+									"   pm.expect(pm.response.text()).to.include('unsolicited');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-DK",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/simple?SortField=Description&SortDescending=true",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"vacancies",
+								"simple"
+							],
+							"query": [
+								{
+									"key": "SortField",
+									"value": "Description"
+								},
+								{
+									"key": "SortDescending",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vacancy List Configuration",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Body is correct\", function () {",
+									"   pm.expect(pm.response.text()).to.include('unsolicited');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-DK",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/configuration/list",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"vacancies",
+								"configuration",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Vacancy Details",
+			"item": [
+				{
+					"name": "Get Vacancy Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-dk",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/Roti-1",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"vacancies",
+								"Roti-1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vacancy Details - ExcludeAdvertisementText",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-dk",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/Roti-1?IncludeAdvertisementText=false",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"vacancies",
+								"Roti-1"
+							],
+							"query": [
+								{
+									"key": "IncludeAdvertisementText",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vacancy AdvertisementText",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-dk",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/AdvertisementText/Roti-1",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"vacancies",
+								"AdvertisementText",
+								"Roti-1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vacancy Details Configuration",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Body is correct\", function () {",
+									"   pm.expect(pm.response.text()).to.include('unsolicited');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-DK",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/configuration/details",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"vacancies",
+								"configuration",
+								"details"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Basic",
+			"item": [
+				{
+					"name": "Get All Vacancies - Detailed",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "en-US",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"vacancies",
+								"detailed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Vacancies - Simple",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Body is correct\", function () {",
+									"   pm.expect(pm.response.text()).to.include('unsolicited');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"type": "text",
+								"value": "da-DK"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/simple",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"vacancies",
+								"simple"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Old",
+			"item": [
+				{
+					"name": "CreateJobAlert",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"type": "text",
+								"value": "da-dk"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"thorsten.hans@thinktecture.com\",\n\t\"emailVerification\": \"thorsten.hans@thinktecture.com\"\n}"
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/jobAlerts",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"jobAlerts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateJobAlert (Invalid Mail)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"type": "text",
+								"value": "da-dk"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"thorsten.hans@thinktecture.com\",\n\t\"emailVerification\": \"thorsten.hans@thinktecture.com2\"\n}"
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/jobAlerts",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"jobAlerts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAllJobAlertsByMail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"type": "text",
+								"value": "da-dk"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"thorsten.hans@thinktecture.com\"\n}"
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/jobAlerts",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"jobAlerts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateJobAlertDetails",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"type": "text",
+								"value": "da-dk"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n}"
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/jobAlerts/{{job_alert_id}}",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"jobAlerts",
+								"{{job_alert_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateJobAlertLink",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"type": "text",
+								"value": "da-dk"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"thorsten.hans@thinktecture.com\"\n}"
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/jobAlerts/link",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"jobAlerts",
+								"link"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteJobAlertById",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"type": "text",
+								"value": "da-dk"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"thorsten.hans@thinktecture.com\"\n}"
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/jobAlerts/{{job_alert_id}}",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"jobAlerts",
+								"{{job_alert_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetJobAlertDetails",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"type": "text",
+								"value": "da-dk"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:4200",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/jobAlerts/{{job_alert_id}}",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"jobAlerts",
+								"{{job_alert_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lookups",
+			"item": [
+				{
+					"name": "Mailing Templates",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Body is correct\", function () {",
+									"   pm.expect(pm.response.text()).to.include('vacancyId');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"type": "text",
+								"value": "da-DK"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/candidates/lookup/mailingtemplates",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"candidates",
+								"lookup",
+								"mailingtemplates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lookup Data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Body is correct\", function () {",
+									"   pm.expect(pm.response.text()).to.include('vacancyId');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-DK",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/candidates/lookup",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"candidates",
+								"lookup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lookup Data Specific",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Body is correct\", function () {",
+									"   pm.expect(pm.response.text()).to.include('vacancyId');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-DK",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/candidates/lookup?IncludeCountry=false&IncludeNationality=true",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"candidates",
+								"lookup"
+							],
+							"query": [
+								{
+									"key": "IncludeCountry",
+									"value": "false"
+								},
+								{
+									"key": "IncludeNationality",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job Agents",
+			"item": [
+				{
+					"name": "Get Job Agent Type",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-dk",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/job-agents/types/JobAgent",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"job-agents",
+								"types",
+								"JobAgent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Job Agent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-dk",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Henrik Skak Pedersen\",\n    \"email\": \"henriksp@me.com\",\n    \"keywords\": \"Service Design, UX, kommunikation, projektledelse, innovation\",\n    \"cultureId\": null,\n    \"locations\": [\n        \"L5\"\n    ],\n    \"regions\": [\n        \"Sjælland\"\n    ],\n    \"fieldsOfWork\": [\n        \"Byggekonst\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/job-agents/create/JobAgent",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"job-agents",
+								"create",
+								"JobAgent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend E-mail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-dk",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\"henriksp@me.com\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/job-agents/resend-email/JobAgent",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"job-agents",
+								"resend-email",
+								"JobAgent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-dk",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\"F38971DF451B125926EED7867AE08BDFD4D4EF18E81AC86AE023544D3C97925E\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/job-agents/activate/JobAgent",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"job-agents",
+								"activate",
+								"JobAgent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Email Exists",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-dk",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\"henriksp@me.com\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/job-agents/emailexists/JobAgent",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"job-agents",
+								"emailexists",
+								"JobAgent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Job Agent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-dk",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"JobAgentId\": \"099a99f2-5d07-4937-94c1-7da93861e8d8\",\n    \"Code\":\"A2B31CDDEE6EC49805F29EE9929A28DFDAF4CB3C9197868CD175979CC70B0B06\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/job-agents/JobAgent",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"job-agents",
+								"JobAgent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Job Agent Configuration",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-dk",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/job-agents/configuration",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"job-agents",
+								"configuration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Job Agent",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-dk",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"JobAgentId\": \"4ad410fd-acae-4aa5-bbad-b725442b23eb\",\n    \"Code\":\"F38971DF451B125926EED7867AE08BDFD4D4EF18E81AC86AE023544D3C97925E\",\n\n    \"name\": \"Henrik Skak Pedersen\",\n    \"email\": \"henriksp@me.com\",\n    \"keywords\": \"Service Design, UX, kommunikation, projektledelse, innovation\",\n    \"cultureId\": null,\n    \"locations\": [\n        \"L5\",\n        \"L1\"\n    ],\n    \"regions\": [\n        \"Sjælland\"\n    ],\n    \"fieldsOfWork\": [\n        \"Byggekonst\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/job-agents/JobAgent",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"job-agents",
+								"JobAgent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Job Agent",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-dk",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"JobAgentId\": \"4ad410fd-acae-4aa5-bbad-b725442b23eb\",\n    \"Code\":\"F38971DF451B125926EED7867AE08BDFD4D4EF18E81AC86AE023544D3C97925E\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/job-agents/JobAgent",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"job-agents",
+								"JobAgent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Candidates",
+			"item": [
+				{
+					"name": "Create Candidate All Fields no attachments",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds",
+									"var localISOTime = (new Date(Date.now() - tzoffset)).toISOString().slice(0, -1);",
+									"pm.environment.set('currentDate', localISOTime);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Body is correct\", function () {",
+									"   pm.expect(pm.response.text()).to.include('true');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-DK",
+								"type": "text"
+							},
+							{
+								"key": "X-MindKey-User-Culture",
+								"value": "da-DK",
+								"type": "text"
+							},
+							{
+								"key": "X-MindKey-User-Name",
+								"value": "Thøger",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "candidate",
+									"value": "{\n    \"vacancyId\": \"IMPORT1\",\n\t\"email\": \"hsp@mindkey.com\",\n    \"name\": \"All No Attachments\",\n    \"registrationTime\": \"{{currentDate}}\",\n    \"allowSave\": true,\n    \"nationalityId\": \"Dansk\",\n    \"previouslyApplied\": false,\n    \"addressStreet1\": \"Strandvejen 125\",\n    \"addressStreet2\": \"Nedre Hellerup\",\n    \"addressCity\": \"Hellerup\",\n    \"addressStateProvince\": \"Dk\",\n    \"addressZipPostalCode\": \"2860\",\n    \"addressCountryRegion\": \"Danmark\",\n    \"homePhone\": \"23 45 34 23\",\n    \"mobilePhone\": \"34 23 12 34\",\n    \"birthDate\": \"2012-04-23\",\n    \"advertisementReference\": \"Berlingske\",\n    \"gender\": \"Female\",\n    \"maritalStatus\": \"Divorced\",\n    \"salutation\": \"Mrs\",\n    \"candidateMailingTemplateId\": \"16\",\n    \"locations\": [\"L1\"],\n    \"fieldsOfWork\": [\"HR\"],\n    \"regions\": [\"Jylland\", \"Sjælland\"],\n    \"vacancyElementLines\": [\"20\", \"14\", \"23\", \"24\", \"25\", \"26\", \"27\"]\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/candidates",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Candidate All Fields and attachment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "de-DE",
+								"type": "text"
+							},
+							{
+								"key": "X-MindKey-User-Culture",
+								"value": "de-DE",
+								"type": "text"
+							},
+							{
+								"key": "X-MindKey-User-Name",
+								"value": "Henrik",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8081",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "candidate",
+									"value": "{\n    \"vacancyId\": \"IMPORT1\",\n\t\"email\": \"hsp@mindkey.com\",\n    \"name\": \"20 20 20\",\n    \"registrationTime\": \"{{currentDate}}\",\n    \"allowSave\": true,\n    \"nationalityId\": \"Dansk\",\n    \"previouslyApplied\": false,\n    \"addressStreet1\": \"Strandvejen 125\",\n    \"addressStreet2\": \"Nedre Hellerup\",\n    \"addressCity\": \"Hellerup\",\n    \"addressStateProvince\": \"Dk\",\n    \"addressZipPostalCode\": \"2860\",\n    \"addressCountryRegion\": \"Danmark\",\n    \"homePhone\": \"23 45 34 23\",\n    \"mobilePhone\": \"34 23 12 34\",\n    \"birthDate\": \"2012-04-23\",\n    \"advertisementReference\": \"Berlingske\",\n    \"gender\": \"Female\",\n    \"maritalStatus\": \"Divorced\",\n    \"salutation\": \"Mrs\",\n    \"candidateMailingTemplateId\": \"16\",\n    \"locations\": [\"L1\"],\n    \"fieldsOfWork\": [\"HR\"],\n    \"regions\": [\"Jylland\", \"Sjælland\"],\n    \"vacancyElementLines\": [\"20\", \"14\", \"23\", \"24\", \"25\", \"26\", \"27\"],\n    \"attachmentDetails\": \n    [\n    \t{ \"DocumentTypeId\": \"CV\", \"Description\": \"CV\" },\n    \t{ \"DocumentTypeId\": \"Ansøgning\", \"Description\": \"Ansøgning\" }\n    ]\n}",
+									"type": "text"
+								},
+								{
+									"key": "attachments",
+									"type": "file",
+									"src": [
+										"/Users/hsp/Documents/25-021526-facebook_profile_picture_affects_chances_of_getting_hired.jpg",
+										"/Users/hsp/Documents/01-shutterstock_476340928-Irina-Bg-1024x683.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/candidates",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Candidate Required Fields",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds",
+									"var localISOTime = (new Date(Date.now() - tzoffset)).toISOString().slice(0, -1);",
+									"pm.environment.set('currentDate', localISOTime);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"response is ok\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Body is correct\", function () {",
+									"   pm.expect(pm.response.text()).to.include('true');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "da-DK",
+								"type": "text"
+							},
+							{
+								"key": "X-MindKey-User-Culture",
+								"value": "da-DK",
+								"type": "text"
+							},
+							{
+								"key": "X-MindKey-User-Name",
+								"value": "RecruitingAPI",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "candidate",
+									"value": "{\n    \"vacancyId\": \"IMPORT1\",\n\t\"email\": \"hsp@mindkey.com\",\n    \"name\": \"Mandatory Test\",\n    \"registrationTime\": \"{{currentDate}}\",\n    \"allowSave\": true,\n    \"previouslyApplied\": false\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/candidates",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Candidate Application Type",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-MindKey-User-Language",
+								"value": "en-US",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/candidates/types/Standard",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"candidates",
+								"types",
+								"Standard"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Swagger",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.json;",
+							"});",
+							"",
+							"pm.test(\"Body is correct\", function () {",
+							"   pm.expect(pm.response.text()).to.include('vacancyId');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-MindKey-User-Language",
+						"type": "text",
+						"value": "da-DK"
+					}
+				],
+				"url": {
+					"raw": "{{recruiting_root}}/swagger/v1/swagger.json",
+					"host": [
+						"{{recruiting_root}}"
+					],
+					"path": [
+						"swagger",
+						"v1",
+						"swagger.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Options",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true
+				}
+			},
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Access-Control-Request-Method",
+						"value": "GET",
+						"type": "text"
+					},
+					{
+						"key": "Access-Control-Request-Headers",
+						"value": "x-mindkey-user-language,x-mindkey-user-name,x-mindkey-user-timezone",
+						"type": "text"
+					},
+					{
+						"key": "Origin",
+						"value": "https://localhost:8080",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed",
+					"host": [
+						"{{recruiting_root}}"
+					],
+					"path": [
+						"{{recruiting_customer_id}}",
+						"vacancies",
+						"detailed"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Options",
+					"originalRequest": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Access-Control-Request-Method",
+								"value": "GET",
+								"type": "text"
+							},
+							{
+								"key": "Access-Control-Request-Headers",
+								"value": "x-mindkey-user-language,x-mindkey-user-name,x-mindkey-user-timezone",
+								"type": "text"
+							},
+							{
+								"key": "Origin",
+								"value": "https://localhost:8080",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{recruiting_root}}/{{recruiting_customer_id}}/vacancies/detailed",
+							"host": [
+								"{{recruiting_root}}"
+							],
+							"path": [
+								"{{recruiting_customer_id}}",
+								"vacancies",
+								"detailed"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 15 Mar 2023 09:19:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Request-Context",
+							"value": "appId=cid-v1:3a915af9-4520-41f5-82db-5436fdad8fe6"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=86400, enforce"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "vacancy_id",
+			"value": "2011-7_1"
+		},
+		{
+			"key": "job_alert_id",
+			"value": "1"
+		}
+	]
+}

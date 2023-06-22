@@ -1,0 +1,2358 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Recruiting API",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://example.com",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/{recruiting_customer_id}/vacancies/detailed": {
+      "get": {
+        "tags": [
+          "Detailed"
+        ],
+        "summary": "Get All Vacancies - da-dk",
+        "operationId": "GetAllVacancies-da-dk",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-DK"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/vacancies/simple": {
+      "get": {
+        "tags": [
+          "Simple"
+        ],
+        "summary": "Get All Vacancies Simple - da-dk",
+        "operationId": "GetAllVacanciesSimple-da-dk",
+        "parameters": [
+          {
+            "name": "ShowRegions",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": true
+            }
+          },
+          {
+            "name": "ShowLocations",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": true
+            }
+          },
+          {
+            "name": "ShowTeaserText",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": false
+            }
+          },
+          {
+            "name": "ShowStartDate",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": false
+            }
+          },
+          {
+            "name": "ShowEndDate",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": false
+            }
+          },
+          {
+            "name": "ShowAreas",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "boolean",
+              "example": true
+            }
+          },
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-DK"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/vacancies/configuration/list": {
+      "get": {
+        "tags": [
+          "Vacancy List"
+        ],
+        "summary": "Vacancy List Configuration",
+        "operationId": "VacancyListConfiguration",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-DK"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/vacancies/Roti-1": {
+      "get": {
+        "tags": [
+          "Vacancy Details"
+        ],
+        "summary": "Get Vacancy Details",
+        "operationId": "GetVacancyDetails",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/vacancies/AdvertisementText/Roti-1": {
+      "get": {
+        "tags": [
+          "Vacancy Details"
+        ],
+        "summary": "Get Vacancy AdvertisementText",
+        "operationId": "GetVacancyAdvertisementText",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/vacancies/configuration/details": {
+      "get": {
+        "tags": [
+          "Vacancy Details"
+        ],
+        "summary": "Vacancy Details Configuration",
+        "operationId": "VacancyDetailsConfiguration",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-DK"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/jobAlerts": {
+      "post": {
+        "tags": [
+          "Old"
+        ],
+        "summary": "CreateJobAlert",
+        "operationId": "CreateJobAlert",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateJobAlertRequest"
+                  },
+                  {
+                    "example": {
+                      "email": "thorsten.hans@thinktecture.com",
+                      "emailVerification": "thorsten.hans@thinktecture.com"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "email": "thorsten.hans@thinktecture.com",
+                "emailVerification": "thorsten.hans@thinktecture.com"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Old"
+        ],
+        "summary": "DeleteAllJobAlertsByMail",
+        "operationId": "DeleteAllJobAlertsByMail",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/jobAlerts/1": {
+      "put": {
+        "tags": [
+          "Old"
+        ],
+        "summary": "UpdateJobAlertDetails",
+        "operationId": "UpdateJobAlertDetails",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {}
+              },
+              "example": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Old"
+        ],
+        "summary": "DeleteJobAlertById",
+        "operationId": "DeleteJobAlertById",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string",
+              "example": "application/json"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Old"
+        ],
+        "summary": "GetJobAlertDetails",
+        "operationId": "GetJobAlertDetails",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:4200"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/jobAlerts/link": {
+      "post": {
+        "tags": [
+          "Old"
+        ],
+        "summary": "GenerateJobAlertLink",
+        "operationId": "GenerateJobAlertLink",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/GenerateJobAlertLinkRequest"
+                  },
+                  {
+                    "example": {
+                      "email": "thorsten.hans@thinktecture.com"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "email": "thorsten.hans@thinktecture.com"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/candidates/lookup/mailingtemplates": {
+      "get": {
+        "tags": [
+          "Lookups"
+        ],
+        "summary": "Mailing Templates",
+        "operationId": "MailingTemplates",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-DK"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/candidates/lookup": {
+      "get": {
+        "tags": [
+          "Lookups"
+        ],
+        "summary": "Lookup Data",
+        "operationId": "LookupData",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-DK"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/job-agents/types/JobAgent": {
+      "get": {
+        "tags": [
+          "Job Agents"
+        ],
+        "summary": "Get Job Agent Type",
+        "operationId": "GetJobAgentType",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/job-agents/create/JobAgent": {
+      "post": {
+        "tags": [
+          "Job Agents"
+        ],
+        "summary": "Create Job Agent",
+        "operationId": "CreateJobAgent",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateJobAgentRequest"
+                  },
+                  {
+                    "example": {
+                      "name": "Henrik Skak Pedersen",
+                      "email": "henriksp@me.com",
+                      "keywords": "Service Design, UX, kommunikation, projektledelse, innovation",
+                      "cultureId": null,
+                      "locations": [
+                        "L5"
+                      ],
+                      "regions": [
+                        "Sjælland"
+                      ],
+                      "fieldsOfWork": [
+                        "Byggekonst"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "name": "Henrik Skak Pedersen",
+                "email": "henriksp@me.com",
+                "keywords": "Service Design, UX, kommunikation, projektledelse, innovation",
+                "cultureId": null,
+                "locations": [
+                  "L5"
+                ],
+                "regions": [
+                  "Sjælland"
+                ],
+                "fieldsOfWork": [
+                  "Byggekonst"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/job-agents/resend-email/JobAgent": {
+      "post": {
+        "tags": [
+          "Job Agents"
+        ],
+        "summary": "Resend E-mail",
+        "operationId": "ResendE-mail",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "string",
+                "example": "\"henriksp@me.com\""
+              },
+              "example": "\"henriksp@me.com\""
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/job-agents/activate/JobAgent": {
+      "post": {
+        "tags": [
+          "Job Agents"
+        ],
+        "summary": "Activate",
+        "operationId": "Activate",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "string",
+                "example": "\"F38971DF451B125926EED7867AE08BDFD4D4EF18E81AC86AE023544D3C97925E\""
+              },
+              "example": "\"F38971DF451B125926EED7867AE08BDFD4D4EF18E81AC86AE023544D3C97925E\""
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/job-agents/emailexists/JobAgent": {
+      "post": {
+        "tags": [
+          "Job Agents"
+        ],
+        "summary": "Email Exists",
+        "operationId": "EmailExists",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "text/plain": {
+              "schema": {
+                "type": "string",
+                "example": "\"henriksp@me.com\""
+              },
+              "example": "\"henriksp@me.com\""
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/job-agents/JobAgent": {
+      "post": {
+        "tags": [
+          "Job Agents"
+        ],
+        "summary": "Get Job Agent",
+        "operationId": "GetJobAgent",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/GetJobAgentRequest"
+                  },
+                  {
+                    "example": {
+                      "JobAgentId": "099a99f2-5d07-4937-94c1-7da93861e8d8",
+                      "Code": "A2B31CDDEE6EC49805F29EE9929A28DFDAF4CB3C9197868CD175979CC70B0B06"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "JobAgentId": "099a99f2-5d07-4937-94c1-7da93861e8d8",
+                "Code": "A2B31CDDEE6EC49805F29EE9929A28DFDAF4CB3C9197868CD175979CC70B0B06"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Job Agents"
+        ],
+        "summary": "Update Job Agent",
+        "operationId": "UpdateJobAgent",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/UpdateJobAgentRequest"
+                  },
+                  {
+                    "example": {
+                      "JobAgentId": "4ad410fd-acae-4aa5-bbad-b725442b23eb",
+                      "Code": "F38971DF451B125926EED7867AE08BDFD4D4EF18E81AC86AE023544D3C97925E",
+                      "name": "Henrik Skak Pedersen",
+                      "email": "henriksp@me.com",
+                      "keywords": "Service Design, UX, kommunikation, projektledelse, innovation",
+                      "cultureId": null,
+                      "locations": [
+                        "L5",
+                        "L1"
+                      ],
+                      "regions": [
+                        "Sjælland"
+                      ],
+                      "fieldsOfWork": [
+                        "Byggekonst"
+                      ]
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "JobAgentId": "4ad410fd-acae-4aa5-bbad-b725442b23eb",
+                "Code": "F38971DF451B125926EED7867AE08BDFD4D4EF18E81AC86AE023544D3C97925E",
+                "name": "Henrik Skak Pedersen",
+                "email": "henriksp@me.com",
+                "keywords": "Service Design, UX, kommunikation, projektledelse, innovation",
+                "cultureId": null,
+                "locations": [
+                  "L5",
+                  "L1"
+                ],
+                "regions": [
+                  "Sjælland"
+                ],
+                "fieldsOfWork": [
+                  "Byggekonst"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Job Agents"
+        ],
+        "summary": "Delete Job Agent",
+        "operationId": "DeleteJobAgent",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/job-agents/configuration": {
+      "get": {
+        "tags": [
+          "Job Agents"
+        ],
+        "summary": "Get Job Agent Configuration",
+        "operationId": "GetJobAgentConfiguration",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-dk"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/candidates": {
+      "post": {
+        "tags": [
+          "Candidates"
+        ],
+        "summary": "Create Candidate All Fields no attachments",
+        "operationId": "CreateCandidateAllFieldsnoattachments",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-DK"
+            }
+          },
+          {
+            "name": "X-MindKey-User-Culture",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-DK"
+            }
+          },
+          {
+            "name": "X-MindKey-User-Name",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "Thøger"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "candidate"
+                ],
+                "type": "object",
+                "properties": {
+                  "candidate": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/candidate"
+                      },
+                      {
+                        "example": {
+                          "vacancyId": "IMPORT1",
+                          "email": "hsp@mindkey.com",
+                          "name": "All No Attachments",
+                          "registrationTime": "{{currentDate}}",
+                          "allowSave": true,
+                          "nationalityId": "Dansk",
+                          "previouslyApplied": false,
+                          "addressStreet1": "Strandvejen 125",
+                          "addressStreet2": "Nedre Hellerup",
+                          "addressCity": "Hellerup",
+                          "addressStateProvince": "Dk",
+                          "addressZipPostalCode": "2860",
+                          "addressCountryRegion": "Danmark",
+                          "homePhone": "23 45 34 23",
+                          "mobilePhone": "34 23 12 34",
+                          "birthDate": "2012-04-23",
+                          "advertisementReference": "Berlingske",
+                          "gender": "Female",
+                          "maritalStatus": "Divorced",
+                          "salutation": "Mrs",
+                          "candidateMailingTemplateId": "16",
+                          "locations": [
+                            "L1"
+                          ],
+                          "fieldsOfWork": [
+                            "HR"
+                          ],
+                          "regions": [
+                            "Jylland",
+                            "Sjælland"
+                          ],
+                          "vacancyElementLines": [
+                            "20",
+                            "14",
+                            "23",
+                            "24",
+                            "25",
+                            "26",
+                            "27"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/{recruiting_customer_id}/candidates/types/Standard": {
+      "get": {
+        "tags": [
+          "Candidates"
+        ],
+        "summary": "Get Candidate Application Type",
+        "operationId": "GetCandidateApplicationType",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "en-US"
+            }
+          },
+          {
+            "name": "Origin",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "http://localhost:8080"
+            }
+          },
+          {
+            "name": "recruiting_customer_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/swagger/v1/swagger.json": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Swagger",
+        "operationId": "Swagger",
+        "parameters": [
+          {
+            "name": "X-MindKey-User-Language",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "da-DK"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateJobAlertRequest": {
+        "title": "CreateJobAlertRequest",
+        "required": [
+          "email",
+          "emailVerification"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "emailVerification": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "thorsten.hans@thinktecture.com",
+          "emailVerification": "thorsten.hans@thinktecture.com"
+        }
+      },
+      "CreateJobAlertInvalidMailRequest": {
+        "title": "CreateJobAlertInvalidMailRequest",
+        "required": [
+          "email",
+          "emailVerification"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "emailVerification": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "thorsten.hans@thinktecture.com",
+          "emailVerification": "thorsten.hans@thinktecture.com2"
+        }
+      },
+      "DeleteAllJobAlertsByMailRequest": {
+        "title": "DeleteAllJobAlertsByMailRequest",
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "thorsten.hans@thinktecture.com"
+        }
+      },
+      "GenerateJobAlertLinkRequest": {
+        "title": "GenerateJobAlertLinkRequest",
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "thorsten.hans@thinktecture.com"
+        }
+      },
+      "DeleteJobAlertByIdRequest": {
+        "title": "DeleteJobAlertByIdRequest",
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "thorsten.hans@thinktecture.com"
+        }
+      },
+      "CreateJobAgentRequest": {
+        "title": "CreateJobAgentRequest",
+        "required": [
+          "name",
+          "email",
+          "keywords",
+          "cultureId",
+          "locations",
+          "regions",
+          "fieldsOfWork"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "string"
+          },
+          "cultureId": {
+            "type": "string",
+            "nullable": true
+          },
+          "locations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "regions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "fieldsOfWork": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "name": "Henrik Skak Pedersen",
+          "email": "henriksp@me.com",
+          "keywords": "Service Design, UX, kommunikation, projektledelse, innovation",
+          "cultureId": null,
+          "locations": [
+            "L5"
+          ],
+          "regions": [
+            "Sjælland"
+          ],
+          "fieldsOfWork": [
+            "Byggekonst"
+          ]
+        }
+      },
+      "GetJobAgentRequest": {
+        "title": "GetJobAgentRequest",
+        "required": [
+          "JobAgentId",
+          "Code"
+        ],
+        "type": "object",
+        "properties": {
+          "JobAgentId": {
+            "type": "string"
+          },
+          "Code": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "JobAgentId": "099a99f2-5d07-4937-94c1-7da93861e8d8",
+          "Code": "A2B31CDDEE6EC49805F29EE9929A28DFDAF4CB3C9197868CD175979CC70B0B06"
+        }
+      },
+      "UpdateJobAgentRequest": {
+        "title": "UpdateJobAgentRequest",
+        "required": [
+          "JobAgentId",
+          "Code",
+          "name",
+          "email",
+          "keywords",
+          "cultureId",
+          "locations",
+          "regions",
+          "fieldsOfWork"
+        ],
+        "type": "object",
+        "properties": {
+          "JobAgentId": {
+            "type": "string"
+          },
+          "Code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "string"
+          },
+          "cultureId": {
+            "type": "string",
+            "nullable": true
+          },
+          "locations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "regions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "fieldsOfWork": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "JobAgentId": "4ad410fd-acae-4aa5-bbad-b725442b23eb",
+          "Code": "F38971DF451B125926EED7867AE08BDFD4D4EF18E81AC86AE023544D3C97925E",
+          "name": "Henrik Skak Pedersen",
+          "email": "henriksp@me.com",
+          "keywords": "Service Design, UX, kommunikation, projektledelse, innovation",
+          "cultureId": null,
+          "locations": [
+            "L5",
+            "L1"
+          ],
+          "regions": [
+            "Sjælland"
+          ],
+          "fieldsOfWork": [
+            "Byggekonst"
+          ]
+        }
+      },
+      "DeleteJobAgentRequest": {
+        "title": "DeleteJobAgentRequest",
+        "required": [
+          "JobAgentId",
+          "Code"
+        ],
+        "type": "object",
+        "properties": {
+          "JobAgentId": {
+            "type": "string"
+          },
+          "Code": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "JobAgentId": "4ad410fd-acae-4aa5-bbad-b725442b23eb",
+          "Code": "F38971DF451B125926EED7867AE08BDFD4D4EF18E81AC86AE023544D3C97925E"
+        }
+      },
+      "candidate": {
+        "title": "candidate",
+        "required": [
+          "vacancyId",
+          "email",
+          "name",
+          "registrationTime",
+          "allowSave",
+          "nationalityId",
+          "previouslyApplied",
+          "addressStreet1",
+          "addressStreet2",
+          "addressCity",
+          "addressStateProvince",
+          "addressZipPostalCode",
+          "addressCountryRegion",
+          "homePhone",
+          "mobilePhone",
+          "birthDate",
+          "advertisementReference",
+          "gender",
+          "maritalStatus",
+          "salutation",
+          "candidateMailingTemplateId",
+          "locations",
+          "fieldsOfWork",
+          "regions",
+          "vacancyElementLines"
+        ],
+        "type": "object",
+        "properties": {
+          "vacancyId": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "registrationTime": {
+            "type": "string"
+          },
+          "allowSave": {
+            "type": "boolean"
+          },
+          "nationalityId": {
+            "type": "string"
+          },
+          "previouslyApplied": {
+            "type": "boolean"
+          },
+          "addressStreet1": {
+            "type": "string"
+          },
+          "addressStreet2": {
+            "type": "string"
+          },
+          "addressCity": {
+            "type": "string"
+          },
+          "addressStateProvince": {
+            "type": "string"
+          },
+          "addressZipPostalCode": {
+            "type": "string"
+          },
+          "addressCountryRegion": {
+            "type": "string"
+          },
+          "homePhone": {
+            "type": "string"
+          },
+          "mobilePhone": {
+            "type": "string"
+          },
+          "birthDate": {
+            "type": "string"
+          },
+          "advertisementReference": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "maritalStatus": {
+            "type": "string"
+          },
+          "salutation": {
+            "type": "string"
+          },
+          "candidateMailingTemplateId": {
+            "type": "string"
+          },
+          "locations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "fieldsOfWork": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "regions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "vacancyElementLines": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "vacancyId": "IMPORT1",
+          "email": "hsp@mindkey.com",
+          "name": "All No Attachments",
+          "registrationTime": "{{currentDate}}",
+          "allowSave": true,
+          "nationalityId": "Dansk",
+          "previouslyApplied": false,
+          "addressStreet1": "Strandvejen 125",
+          "addressStreet2": "Nedre Hellerup",
+          "addressCity": "Hellerup",
+          "addressStateProvince": "Dk",
+          "addressZipPostalCode": "2860",
+          "addressCountryRegion": "Danmark",
+          "homePhone": "23 45 34 23",
+          "mobilePhone": "34 23 12 34",
+          "birthDate": "2012-04-23",
+          "advertisementReference": "Berlingske",
+          "gender": "Female",
+          "maritalStatus": "Divorced",
+          "salutation": "Mrs",
+          "candidateMailingTemplateId": "16",
+          "locations": [
+            "L1"
+          ],
+          "fieldsOfWork": [
+            "HR"
+          ],
+          "regions": [
+            "Jylland",
+            "Sjælland"
+          ],
+          "vacancyElementLines": [
+            "20",
+            "14",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27"
+          ]
+        }
+      },
+      "candidate1": {
+        "title": "candidate1",
+        "required": [
+          "vacancyId",
+          "email",
+          "name",
+          "registrationTime",
+          "allowSave",
+          "nationalityId",
+          "previouslyApplied",
+          "addressStreet1",
+          "addressStreet2",
+          "addressCity",
+          "addressStateProvince",
+          "addressZipPostalCode",
+          "addressCountryRegion",
+          "homePhone",
+          "mobilePhone",
+          "birthDate",
+          "advertisementReference",
+          "gender",
+          "maritalStatus",
+          "salutation",
+          "candidateMailingTemplateId",
+          "locations",
+          "fieldsOfWork",
+          "regions",
+          "vacancyElementLines",
+          "attachmentDetails"
+        ],
+        "type": "object",
+        "properties": {
+          "vacancyId": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "registrationTime": {
+            "type": "string"
+          },
+          "allowSave": {
+            "type": "boolean"
+          },
+          "nationalityId": {
+            "type": "string"
+          },
+          "previouslyApplied": {
+            "type": "boolean"
+          },
+          "addressStreet1": {
+            "type": "string"
+          },
+          "addressStreet2": {
+            "type": "string"
+          },
+          "addressCity": {
+            "type": "string"
+          },
+          "addressStateProvince": {
+            "type": "string"
+          },
+          "addressZipPostalCode": {
+            "type": "string"
+          },
+          "addressCountryRegion": {
+            "type": "string"
+          },
+          "homePhone": {
+            "type": "string"
+          },
+          "mobilePhone": {
+            "type": "string"
+          },
+          "birthDate": {
+            "type": "string"
+          },
+          "advertisementReference": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "maritalStatus": {
+            "type": "string"
+          },
+          "salutation": {
+            "type": "string"
+          },
+          "candidateMailingTemplateId": {
+            "type": "string"
+          },
+          "locations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "fieldsOfWork": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "regions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "vacancyElementLines": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "attachmentDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttachmentDetail"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "vacancyId": "IMPORT1",
+          "email": "hsp@mindkey.com",
+          "name": "20 20 20",
+          "registrationTime": "{{currentDate}}",
+          "allowSave": true,
+          "nationalityId": "Dansk",
+          "previouslyApplied": false,
+          "addressStreet1": "Strandvejen 125",
+          "addressStreet2": "Nedre Hellerup",
+          "addressCity": "Hellerup",
+          "addressStateProvince": "Dk",
+          "addressZipPostalCode": "2860",
+          "addressCountryRegion": "Danmark",
+          "homePhone": "23 45 34 23",
+          "mobilePhone": "34 23 12 34",
+          "birthDate": "2012-04-23",
+          "advertisementReference": "Berlingske",
+          "gender": "Female",
+          "maritalStatus": "Divorced",
+          "salutation": "Mrs",
+          "candidateMailingTemplateId": "16",
+          "locations": [
+            "L1"
+          ],
+          "fieldsOfWork": [
+            "HR"
+          ],
+          "regions": [
+            "Jylland",
+            "Sjælland"
+          ],
+          "vacancyElementLines": [
+            "20",
+            "14",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27"
+          ],
+          "attachmentDetails": [
+            {
+              "DocumentTypeId": "CV",
+              "Description": "CV"
+            },
+            {
+              "DocumentTypeId": "Ansøgning",
+              "Description": "Ansøgning"
+            }
+          ]
+        }
+      },
+      "AttachmentDetail": {
+        "title": "AttachmentDetail",
+        "required": [
+          "DocumentTypeId",
+          "Description"
+        ],
+        "type": "object",
+        "properties": {
+          "DocumentTypeId": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "DocumentTypeId": "CV",
+          "Description": "CV"
+        }
+      },
+      "candidate2": {
+        "title": "candidate2",
+        "required": [
+          "vacancyId",
+          "email",
+          "name",
+          "registrationTime",
+          "allowSave",
+          "previouslyApplied"
+        ],
+        "type": "object",
+        "properties": {
+          "vacancyId": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "registrationTime": {
+            "type": "string"
+          },
+          "allowSave": {
+            "type": "boolean"
+          },
+          "previouslyApplied": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "vacancyId": "IMPORT1",
+          "email": "hsp@mindkey.com",
+          "name": "Mandatory Test",
+          "registrationTime": "{{currentDate}}",
+          "allowSave": true,
+          "previouslyApplied": false
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Detailed"
+    },
+    {
+      "name": "Filters"
+    },
+    {
+      "name": "Simple"
+    },
+    {
+      "name": "Vacancy List"
+    },
+    {
+      "name": "Vacancy Details"
+    },
+    {
+      "name": "Basic"
+    },
+    {
+      "name": "Old"
+    },
+    {
+      "name": "Lookups"
+    },
+    {
+      "name": "Job Agents"
+    },
+    {
+      "name": "Candidates"
+    },
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
