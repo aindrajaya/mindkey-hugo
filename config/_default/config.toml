@@ -1,4 +1,4 @@
-baseurl = "https://mindkey-hugo.netlify.apps/"
+baseURL = "https://mindkey-hugo.netlify.apps/"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
@@ -11,7 +11,11 @@ rssLimit = 10
 # Multilingual
 defaultContentLanguage = "en"
 disableLanguages = ["de", "nl"]
-# defaultContentLanguageInSubdir = true
+
+[params]
+  headers = [
+    "Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https://i.giphy.com; font-src 'self' data:; connect-src 'self' 'unsafe-inline'; manifest-src 'self' 'unsafe-inline' https://*.netlify.app"
+  ]
 
 # add redirects/headers
 [outputs]
@@ -44,7 +48,7 @@ baseName = "sitemap"
 isHTML = false
 isPlainText = true
 noUgly = true
-rel  = "sitemap"
+rel = "sitemap"
 
 [caches]
   [caches.getjson]
