@@ -58,10 +58,10 @@
   parent = "get-started"
 
 [[main]]
-  name = "Tutorial"
+  name = "OpenAPI"
   weight = 50
   identifier = "tutorial"
-  url = "/docs/recruiting/recipe"
+  url = "/docs/recruiting/openapi"
   parent = "get-started"
 
 # [[social]]
