@@ -13,4 +13,4 @@ weight: 140
 toc: false
 ---
 
-{{< generate-openapi-ref-docs url="https://getpantry.cloud/apiv1/pantry/89a07bbc-7b71-47ce-a0d1-81e6c4f9b257/basket/openapi" >}}
+{{< generate-openapi-ref-docs url="https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json" >}}

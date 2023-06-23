@@ -34,41 +34,38 @@ where fileName is the file's name with `.json` removed from the end
     <div class="description">
       <p>{{ $openapi.info.description }}</p>
     </div>
-    <div style="display: flex; flex-direction: column; align-items: stretch; width: 100%;">
+    <div class="endpoint-cards">
       {{ range $path, $pathMethods := $openapi.paths }}
         {{ range $pathMethod, $pathDetails := $pathMethods }}
-          <div style="display: flex; flex-direction: column; width: 100%; border: 1px solid #8ed6fb; padding: 10px; margin-top: 10px; border-radius: 10px;"> 
-            <div style="display: flex; flex-direction: row; width: 100%; max-height: 400px; overflow: auto;">
-              <div style="width: 50%; padding-right: 15px;">
-                <h4><span style="text-transform: uppercase;">{{ $pathMethod }}</span>&nbsp;&nbsp;<span style="color:#8ed6fb;">{{ $path }}</span></h4>
-                <h5>{{ $pathDetails.summary }}</h5>
-                <p><a href="{{ $pathDetails.externalDocs.url }}">{{ $pathDetails.externalDocs.description}}</a></p>
-                <p>Description: {{ $pathDetails.description | markdownify }}</p>
-              </div>
-              <div style="width: 50%; display: flex; flex-direction: column;">
-                {{ range $responseCode, $responseDetails := $pathDetails.responses }}
-                  </br>
-                  {{ if isset $responseDetails "content" }}
-                    {{ range $exampleName, $example := (index $responseDetails.content "application/json").examples }}
-                      {{ if isset $example "$ref" }}
-                        {{ $refPath := index $example "$ref" }}
-                        {{ range $index, $component := (split $refPath "/") }}
-                          {{ if (index $openapi.components.examples $component) }}
-                            <div style="font-weight: bold; max-height: calc(80%); overflow: auto;">
-                              <span>Example for Response Code: {{ $responseCode }}</span>
-                              <pre><code>{{(index $openapi.components.examples $component).value | jsonify (dict "indent" "  ") }}</code></pre>
-                            </div>
-                          {{ end }}
+          <div class="endpoint-card" style="border: 1px solid whitesmoke; border-radius: 5px; margin-bottom: 20px; padding: 5px;">
+            <div class="endpoint-info">
+              <h4><span class="method">{{ $pathMethod }}</span>&nbsp;&nbsp;<span class="path">{{ $path }}</span></h4>
+              <h5>{{ $pathDetails.summary }}</h5>
+              <p><a href="{{ $pathDetails.externalDocs.url }}">{{ $pathDetails.externalDocs.description }}</a></p>
+              <p>Description: {{ $pathDetails.description | markdownify }}</p>
+            </div>
+            <div class="response-examples">
+              {{ range $responseCode, $responseDetails := $pathDetails.responses }}
+                {{ if isset $responseDetails "content" }}
+                  {{ range $exampleName, $example := (index $responseDetails.content "application/json").examples }}
+                    {{ if isset $example "$ref" }}
+                      {{ $refPath := index $example "$ref" }}
+                      {{ range $index, $component := (split $refPath "/") }}
+                        {{ if (index $openapi.components.examples $component) }}
+                          <div class="example">
+                            <div style="background-color: gray; border: 1px solid white; padding: 5px">Example for Response Code: {{ $responseCode }}</div>
+                            <pre style="margin: 1px;"><code>{{ (index $openapi.components.examples $component).value | jsonify (dict "indent" "  ") }}</code></pre>
+                          </div>
                         {{ end }}
-                      {{ else }}
-                        <code style="flex-wrap: nowrap; overflow-x: scroll;">Example Response: {{ $example }}</code>
                       {{ end }}
+                    {{ else }}
+                      <code class="example">Example Response: {{ $example }}</code>
                     {{ end }}
-                  {{ else }}
-                    <div style="margin-top: 65px;">No Example for Response Code: {{ $responseCode }}</div>
                   {{ end }}
+                {{ else }}
+                  <div class="example">No Example for Response Code: {{ $responseCode }}</div>
                 {{ end }}
-              </div>
+              {{ end }}
             </div>
           </div>
         {{ end }}
